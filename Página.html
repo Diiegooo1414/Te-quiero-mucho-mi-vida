@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Te quiero mucho</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            color: pink;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        #touchMessage {
+            font-size: 1.5rem;
+            margin-top: 20px;
+            opacity: 0.8;
+        }
+
+        .flower {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 150px;
+            height: 150px;
+            transform: translate(-50%, -50%);
+            animation: bloom 2s ease-in-out forwards;
+        }
+
+        @keyframes bloom {
+            0% {
+                transform: scale(0) translate(-50%, -50%);
+            }
+            100% {
+                transform: scale(1) translate(-50%, -50%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>TE QUIERO MUCHO MAILOV</h1>
+        <p id="touchMessage">Toca la pantalla</p>
+        <!-- Aquí es donde puedes cambiar la ubicación de la imagen -->
+        <img src="C:\Users\Dipri\OneDrive\Imágenes\flor gato.jpg" class="flower" id="flower" alt="Flor rosa">
+    </div>
+
+    <script>
+        // Función para iniciar la animación
+        function startAnimation() {
+            document.querySelector('h1').style.opacity = 0;
+            document.querySelector('#touchMessage').style.opacity = 0;
+            const flower = document.getElementById('flower');
+            flower.style.display = 'block';
+        }
+
+        // Detectar clic o toque en pantalla
+        document.body.addEventListener('click', startAnimation);
+        document.body.addEventListener('touchstart', startAnimation);
+    </script>
+</body>
+</html>
